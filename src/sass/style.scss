@@ -1,0 +1,11 @@
+@use "/src/sass/libs/fontello.css";
+@use "/src/sass/libs/modern-normalize.min.css";
+@use "/src/sass/libs/grids-min.css";
+@use "/src/sass/libs/grids-responsive-min.css";
+
+@use "/src/sass/base/basic.scss";
+@use "/src/sass/base/variables.scss" as *;
+@use "/src/sass/base/mixins.scss" as *;
+@use "/src/sass/ui/buttons.scss";
+
+@use "/src/sass/blocks/header.scss";
