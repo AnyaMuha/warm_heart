@@ -1,8 +1,21 @@
 @use "/src/sass/base/variables.scss" as *;
 
+@mixin title {
+  color: $black;
+  line-height: 130%;
+}
+
+@mixin descr {
+  color: $black;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%;
+}
+
 @mixin button {
+  text-align: center;
   display: flex;
-  padding: 13px 80px 18px 80px;
+  padding: 15px;
   justify-content: center;
   align-items: center;
   gap: 10px;
@@ -10,4 +23,36 @@
   border-radius: 100px;
   background: $black;
   cursor: pointer;
+}
+
+@mixin angle-decoration {
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    width: 216px;
+    height: 216px;
+    border: 3px solid rgb(255, 255, 255);
+    border-color: transparent rgb(255, 255, 255) transparent transparent;
+    border-radius: 50%;
+    transform: rotate(45deg);
+    pointer-events: none; // чтобы не мешало кликам
+  }
+  &::before {
+    top: -206px;
+    right: 103px;
+    height: 216px;
+    border: 3px solid rgb(255, 255, 255);
+    border-color: transparent rgb(255, 255, 255) transparent transparent;
+    transform: rotate(45deg);
+  }
+
+  // нижняя дуга (белая)
+  &::after {
+    bottom: 466px;
+    right: 198px;
+    border: 3px solid rgb(0, 0, 0);
+    border-color: transparent rgb(0, 0, 0) transparent transparent;
+    transform: rotate(225deg);
+  }
 }

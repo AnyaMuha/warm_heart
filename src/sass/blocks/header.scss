@@ -1,6 +1,8 @@
 @use "/src/sass/base/variables.scss" as *;
 .header {
-  padding: 28px 0;
+  z-index: 100;
+  padding: 20px 0 20px 0;
+  position: relative;
   background-color: $white;
   &__menu {
     padding: 50px 30px;
@@ -138,7 +140,7 @@
     }
     &__logo-fool {
       display: block;
-      margin: 0 60px 0 82px;
+      margin: 0 52px 0 75px;
     }
   }
 }
@@ -153,7 +155,7 @@
       }
     }
     &__logo-fool {
-      margin: 0 118px 0 199px;
+      margin: 0 111px 0 191px;
       font-size: 36px;
     }
   }
@@ -161,7 +163,7 @@
 @media screen and (min-width: 1000px) {
   .header {
     &__logo-fool {
-      margin: 0 173px 0 318px;
+      margin: 0px 165px 0 310px;
     }
     &__icons {
       display: none;
