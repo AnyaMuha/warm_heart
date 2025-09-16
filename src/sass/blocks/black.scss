@@ -1,0 +1,124 @@
+@use "/src/sass/base/variables.scss" as *;
+@use "/src/sass/base/mixins.scss" as *;
+
+.black {
+  padding: 70px 0 90px 0;
+  background-color: $black;
+  &__wrapper {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 41px;
+  }
+  &__descr {
+    margin-top: 20px;
+    color: $white;
+  }
+  &__title {
+    color: $white;
+  }
+  &__subtitle {
+    color: $white;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 130%; /* 36.4px */
+  }
+  &__btn {
+    margin-top: 35px;
+    width: 263px;
+    height: 55px;
+  }
+  &__icon {
+    position: absolute;
+    bottom: -140px;
+    left: calc(50% - 50px);
+    width: 100px;
+    height: 100px;
+  }
+}
+@media (min-width: 480px) {
+  .black {
+    &__descr {
+      width: 328px;
+    }
+  }
+}
+@media (min-width: 768px) {
+  .black {
+    &__descr {
+      width: auto;
+    }
+    &__img {
+      width: 297px;
+      height: 276px;
+    }
+    &__txt-btn {
+      width: 359px;
+    }
+    &__wrapper {
+      align-items: center;
+      row-gap: 50px;
+      column-gap: 41px;
+    }
+    &__icon {
+      width: 150px;
+      height: 150px;
+    }
+  }
+}
+
+@media (min-width: 1000px) {
+  .black {
+    &__img {
+      width: 378.947px;
+      height: 352px;
+    }
+  }
+}
+@media (min-width: 1920px) {
+  .black {
+    &__txt {
+      width: 330px;
+    }
+    &__img {
+      width: 297px;
+      height: 276px;
+    }
+    &__txt-btn {
+      width: 382px;
+    }
+    &__wrapper {
+      align-items: center;
+      justify-content: space-between;
+      gap: 50px;
+    }
+  }
+}
+
+.eco {
+  padding: 70px 0 90px 0;
+
+  &__descr {
+    margin-top: 20px;
+    text-align: center;
+  }
+  &__title {
+    text-align: center;
+  }
+}
+
+@media (min-width: 480px) {
+  .eco {
+    padding: 90px 0 120px 0;
+
+    &__descr {
+      margin-top: 30px;
+    }
+  }
+}
+@media (min-width: 1920px) {
+  .eco {
+    padding: 130px 0 150px 0;
+  }
+}

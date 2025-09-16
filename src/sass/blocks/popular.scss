@@ -1,0 +1,163 @@
+@use "/src/sass/base/variables.scss" as *;
+@use "/src/sass/base/mixins.scss" as *;
+
+.popular {
+  background-color: $white;
+  padding: 70px 0 146px 0;
+  &__slider {
+    padding: 20px;
+
+    // overflow: visible;
+  }
+  &__wrapper {
+    position: relative;
+    overflow: visible;
+  }
+  .plus-button {
+    position: absolute;
+    top: 15px;
+    display: none;
+    right: -60px;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+  }
+
+  &__slider-nav {
+    display: none;
+  }
+  .wrapper__img {
+    margin-top: 40px;
+    width: 100%;
+    height: 312px;
+    border-radius: 25px;
+    background-color: $beige;
+
+    img {
+      margin: 0 auto;
+      padding: 40px;
+      height: 100%;
+    }
+  }
+  .swiper {
+    &__subtitle {
+      margin-top: 10px;
+      color: $black;
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 140%; /* 28px */
+    }
+    &__descr {
+      display: flex;
+      justify-content: space-between;
+    }
+    &-pagination {
+      position: absolute;
+      bottom: -56px;
+      display: flex;
+      justify-content: center;
+      gap: 22px;
+      z-index: 5;
+    }
+    &-pagination-bullet {
+      width: 16px;
+      height: 16px;
+      background-color: $black;
+      opacity: 0.3;
+      border-radius: 50%;
+      transition: transform 0.2s ease;
+    }
+    &-pagination-bullet-active {
+      opacity: 1;
+      transform: scale(1.2);
+    }
+  }
+}
+
+@media (min-width: 480px) {
+  .popular {
+    .wrapper__img {
+      height: 234px;
+      img {
+        padding: 40px 25px;
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .popular {
+    .wrapper__img {
+      height: 343px;
+      &:hover {
+        border-radius: 100%;
+        .plus-button {
+          z-index: 1;
+          display: flex;
+          &:hover {
+            transform: scale(1.2);
+            transition: transform 0.2s ease;
+          }
+        }
+        img {
+          transform: scale(1.2) rotate(5deg);
+          transition: transform 0.2s ease;
+        }
+      }
+      img {
+        padding: 50px;
+      }
+    }
+    .swiper {
+      &__descr {
+        margin-top: 15px;
+      }
+      &__subtitle {
+        font-size: 24px;
+      }
+    }
+  }
+}
+
+@media (min-width: 1000px) {
+  .popular {
+    .wrapper__img {
+      height: 298px;
+    }
+    .swiper {
+      &__subtitle {
+        font-size: 34px;
+      }
+    }
+  }
+}
+@media (min-width: 1920px) {
+  .popular {
+    .wrapper__img {
+      margin-top: 60px;
+      height: 376px;
+    }
+
+    .swiper {
+      &__descr {
+        margin-top: 20px;
+      }
+    }
+    &__slider-nav {
+      display: block;
+      position: absolute;
+      background-color: transparent;
+      border: none;
+      padding: 0;
+      bottom: -60px;
+      z-index: 6;
+    }
+
+    .left-open {
+      left: 410px;
+    }
+    .right-open {
+      right: 410px;
+    }
+  }
+}

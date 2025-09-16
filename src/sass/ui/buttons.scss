@@ -1,7 +1,7 @@
 @use "/src/sass/base/variables.scss" as *;
 @use "/src/sass/base/mixins.scss" as *;
 
-.btn-default {
+.button-default {
   @include button;
   font-size: 21px;
   font-style: normal;
@@ -13,6 +13,24 @@
   &:active {
     border: none;
     background-color: $white;
+    color: $black;
+  }
+}
+
+.button-default-white {
+  @include button;
+  font-size: 21px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 140%;
+  color: $black;
+  background: $white;
+
+  text-decoration: none;
+
+  &:active {
+    border: none;
+    background-color: $beige;
     color: $black;
   }
 }

@@ -3,12 +3,12 @@
 
 .plaid {
   position: relative;
-  padding-top: 70px;
+  padding: 70px 0 158px 0;
   .descr {
     margin-top: 20px;
     width: 279px;
   }
-  &__btn {
+  &__button {
     margin-top: 35px;
     width: 236px;
     height: 55px;
@@ -66,6 +66,8 @@
 
 @media (min-width: 480px) {
   .plaid {
+    padding: 70px 0 330px 0;
+
     &__img {
       position: absolute;
       right: 12px;
@@ -86,7 +88,7 @@
   .plaid {
     padding: 90px 0 120px 0;
 
-    &__btn {
+    &__button {
       margin-top: 45px;
       width: 253px;
       height: 60px;

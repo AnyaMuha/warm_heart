@@ -19,8 +19,7 @@ close.addEventListener("click", () => {
   document.body.style.overflow = "";
 });
 
-const swiper = new Swiper(".mySwiper", {
-  // по умолчанию (мобилка)
+const heroSwiper = new Swiper(".mySwiper", {
   direction: "horizontal",
   loop: true,
   speed: 600,
@@ -32,14 +31,36 @@ const swiper = new Swiper(".mySwiper", {
   observeParents: true,
 });
 
-// переключение направления с 768px
+// Меняем направление после 768px
 const mq = window.matchMedia("(min-width: 768px)");
 function applyDir() {
-  const wantVertical = mq.matches;
-  swiper.changeDirection(wantVertical ? "vertical" : "horizontal", true);
-  swiper.update();
+  heroSwiper.changeDirection(mq.matches ? "vertical" : "horizontal", true);
+  heroSwiper.update();
 }
 mq.addEventListener
   ? mq.addEventListener("change", applyDir)
   : mq.addListener(applyDir);
 applyDir();
+
+// POPULAR
+const popularSwiper = new Swiper(".popular__slider", {
+  slidesPerView: 1,
+  loop: true,
+  speed: 500,
+  spaceBetween: 16,
+  pagination: {
+    el: ".popular__pagination", // уникальная пагинация
+    clickable: true,
+  },
+  navigation: {
+    nextEl: ".right-open",
+    prevEl: ".left-open",
+  },
+  breakpoints: {
+    360: { slidesPerView: 1, spaceBetween: 15 },
+    480: { slidesPerView: 2, spaceBetween: 20 },
+    768: { slidesPerView: 2, spaceBetween: 20 },
+    1000: { slidesPerView: 3, spaceBetween: 20 },
+    1920: { slidesPerView: 3, spaceBetween: 30 },
+  },
+});

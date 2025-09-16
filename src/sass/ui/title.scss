@@ -35,11 +35,11 @@
 
 .descr {
   @include descr;
-  font-size: 17px;
+  font-size: 16px;
 }
 
 @media screen and (min-width: 768px) {
   .descr {
-    font-size: 21px;
+    font-size: 20px;
   }
 }
