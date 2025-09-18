@@ -1,0 +1,111 @@
+@use "/src/sass/base/variables.scss" as *;
+.get {
+  padding: 70px 0 90px 0;
+  &__descr {
+    margin-top: 20px;
+  }
+  &__fieldset {
+    width: 100%;
+    border: none;
+    margin: 0;
+    padding: 0;
+  }
+  &__input {
+    width: 100%;
+    padding-bottom: 16px;
+    display: block;
+    border: none;
+    outline: none;
+    background: transparent;
+    border-bottom: 4px solid $black;
+    &:focus {
+      border-bottom: 4px solid rgb(209, 188, 0);
+    }
+    &::placeholder {
+      opacity: 0.3;
+      color: $black;
+      font-size: 17px;
+      font-weight: 400;
+      line-height: 140%; /* 23.8px */
+    }
+  }
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    &-forma {
+      margin-top: 40px;
+    }
+  }
+  &__btn {
+    margin-top: 40px;
+    width: 214px;
+    height: 55px;
+  }
+}
+
+@media (min-width: 480px) {
+  .get {
+    &__fieldset {
+      width: 320px;
+    }
+    &__btn {
+      width: 226px;
+      height: 60px;
+    }
+  }
+}
+@media (min-width: 768px) {
+  .get {
+    padding: 90px 0 120px 0;
+
+    &__descr {
+      margin-top: 30px;
+    }
+    &__wrapper-forma {
+      margin-top: 50px;
+    }
+    &__fieldset {
+      width: 450px;
+    }
+
+    &__btn {
+      margin-top: 45px;
+    }
+    &__input {
+      &::placeholder {
+        font-size: 21px;
+      }
+    }
+  }
+}
+
+@media (min-width: 1000px) {
+  .get {
+    &__wrapper {
+      justify-content: space-between;
+      &-txt {
+        max-width: 470px;
+      }
+      &-forma {
+        margin: 0;
+      }
+    }
+    &__fieldset {
+      width: 440px;
+    }
+  }
+}
+
+@media (min-width: 1420px) {
+  .get {
+    &__wrapper {
+      justify-content: space-between;
+    }
+    &__fieldset {
+      width: 490px;
+    }
+    &__wrapper-txt {
+      max-width: 667px;
+    }
+  }
+}

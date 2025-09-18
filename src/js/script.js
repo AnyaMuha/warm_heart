@@ -64,3 +64,54 @@ const popularSwiper = new Swiper(".popular__slider", {
     1920: { slidesPerView: 3, spaceBetween: 30 },
   },
 });
+
+(function () {
+  function initFooterAccordion() {
+    const footer = document.querySelector("footer");
+    if (!footer) return;
+
+    const details = Array.from(
+      footer.querySelectorAll(".footer__section details")
+    );
+    if (!details.length) return;
+
+    const mqDesktop = window.matchMedia("(min-width: 768px)");
+
+    // Применяем режим при загрузке/смене ширины
+    function applyMode() {
+      if (mqDesktop.matches) {
+        // Десктоп — все открыты
+        details.forEach((d) => (d.open = true));
+      } else {
+        // Мобилка — все закрыты (если хочешь оставить одну открытой — тут выставь .open у нужной)
+        details.forEach((d) => (d.open = false));
+      }
+    }
+
+    // Аккордеон на мобилке: закрываем соседей, когда одна раскрывается
+    details.forEach((d) => {
+      d.addEventListener("toggle", () => {
+        if (mqDesktop.matches) {
+          // На десктопе не даём закрывать (держим открытым)
+          if (!d.open) d.open = true;
+          return;
+        }
+        if (d.open) {
+          details.forEach((other) => {
+            if (other !== d) other.open = false;
+          });
+        }
+      });
+    });
+
+    applyMode();
+    mqDesktop.addEventListener("change", applyMode);
+  }
+
+  // ждём DOM, если нужно
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initFooterAccordion);
+  } else {
+    initFooterAccordion();
+  }
+})();

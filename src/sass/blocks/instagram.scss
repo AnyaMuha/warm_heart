@@ -1,0 +1,97 @@
+@use "/src/sass/base/variables.scss" as *;
+.instagram {
+  padding: 70px 0 90px 0;
+  background-color: $white;
+  &__card {
+    border-radius: 24px;
+    overflow: hidden;
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+  }
+  &__card-2,
+  &__card-3 {
+    display: none;
+  }
+  &__grid {
+    margin-top: 40px;
+    display: grid;
+    grid-template: 1fr / 1fr;
+  }
+  .handle {
+    margin-top: 10px;
+    color: $black;
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 140%; /* 39.2px */
+  }
+}
+
+@media (min-width: 768px) {
+  .instagram {
+    &__card-2 {
+      display: block;
+    }
+    &__grid {
+      grid-template-columns: 1fr 1fr;
+      grid-auto-rows: auto;
+      gap: 20px;
+    }
+    .handle {
+      margin-top: 5px;
+      grid-column: 2 / 3;
+      grid-row: 2 / 3;
+    }
+    .descr {
+      margin-top: 15px;
+    }
+  }
+}
+
+@media (min-width: 1000px) {
+  .instagram {
+    &__card-3 {
+      display: block;
+    }
+    &__grid {
+      position: relative;
+      grid-template-columns: 1fr 1.25fr 0.75fr;
+      grid-auto-rows: auto;
+      gap: 20px;
+    }
+    .handle {
+      position: absolute;
+      top: 233px;
+      left: 0;
+      grid-column: 3 / 3;
+      grid-row: 1 / 3;
+      font-size: 39px;
+    }
+    .descr {
+      position: absolute;
+      top: 302px;
+      left: 0;
+      grid-column: 1 / 2;
+      grid-row: 1 / 3;
+    }
+  }
+}
+
+@media (min-width: 1100px) {
+  .instagram {
+    &__grid {
+      margin-top: 60px;
+      gap: 30px;
+    }
+    .handle {
+      margin-top: 10px;
+      top: 289.5px;
+    }
+    .descr {
+      margin-top: 20px;
+      top: 386px;
+    }
+  }
+}

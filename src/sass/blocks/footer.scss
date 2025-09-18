@@ -1,0 +1,208 @@
+@use "/src/sass/base/variables.scss" as *;
+.footer {
+  &__wrapper {
+    flex-wrap: wrap;
+    display: flex;
+    flex-direction: column;
+  }
+  &__section {
+    order: 1;
+  }
+
+  padding: 70px 0 41px 0;
+  background-color: $black;
+  &__logo {
+    color: $white;
+    text-align: left;
+    font-size: 28px;
+    font-weight: 900;
+    line-height: 130%;
+    text-transform: uppercase;
+  }
+  &__social {
+    margin-top: 30px;
+
+    a:focus-visible {
+      outline: 2px solid $white;
+      outline-offset: 2px;
+    }
+    ul {
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: start;
+      gap: 15px;
+    }
+    li {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background-color: $white;
+      list-style: none;
+      border-radius: 20px;
+
+      a {
+        font-size: 20px;
+        text-decoration: none;
+        color: $black;
+      }
+    }
+  }
+  &__descr {
+    display: flex;
+    gap: 30px;
+    order: 2;
+    margin-top: 40px;
+    opacity: 0.3;
+    color: $white;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 130%;
+    .warm_heart {
+      text-transform: uppercase;
+    }
+  }
+  &__details {
+    border-bottom: 2px solid rgba($white, 0.3);
+    padding: 25px 0;
+    summary {
+      color: $white;
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 140%;
+      padding-right: 36px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+
+      /* скрываем нативный маркер у всех браузеров */
+      &::-webkit-details-marker {
+        display: none;
+      }
+      &::marker {
+        content: "";
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 50%;
+        width: 22px;
+        height: 22px;
+        transform: translateY(-50%);
+        transition: transform 0.25s ease;
+
+        /* SVG-галочка вниз; stroke = currentColor */
+        background: no-repeat center / contain
+          url("data:image/svg+xml;utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>\
+  <polyline points='6 9 12 15 18 9'/></svg>");
+      }
+    }
+
+    /* при открытии разворачиваем стрелку */
+    &[open] > summary::after {
+      transform: translateY(-50%) rotate(180deg);
+    }
+
+    ul {
+      margin-top: 20px;
+      padding: 0;
+      display: flex;
+      gap: 15px;
+      flex-direction: column;
+
+      li {
+        font-size: 17px;
+        font-weight: 400;
+        line-height: 140%;
+        list-style: none;
+
+        a {
+          text-decoration: none;
+          color: $white;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 480px) {
+  .footer {
+    &__logo-social {
+      display: flex;
+      align-items: center;
+      gap: 50px;
+    }
+    &__social {
+      margin-top: 0;
+    }
+  }
+}
+@media (min-width: 768px) {
+  .footer {
+    &__wrapper {
+      flex-direction: row;
+      gap: 50px 120px;
+    }
+    &__logo-social {
+      width: 100%;
+    }
+    &__logo {
+      font-size: 36px;
+    }
+    &__details {
+      border-bottom: none;
+      padding: 0;
+      ul {
+        margin-top: 30px;
+        gap: 31px;
+      }
+      a {
+        font-size: 21px;
+      }
+      summary {
+        padding-right: 0;
+        cursor: default;
+        &::after {
+          display: none;
+        }
+      }
+    }
+    &__descr {
+      margin-top: 0;
+      gap: 50px;
+      font-size: 17px;
+    }
+  }
+}
+
+@media (min-width: 1000px) {
+  .footer {
+    &__wrapper {
+      position: relative;
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 0 74px;
+    }
+
+    &__logo-social {
+      flex-direction: column;
+      align-items: start;
+      gap: 1.875rem;
+      width: auto;
+    }
+    &__details {
+    }
+    &__descr {
+      position: absolute;
+      bottom: 0;
+      gap: 20px;
+      flex-direction: column;
+    }
+  }
+}

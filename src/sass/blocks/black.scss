@@ -46,6 +46,8 @@
 }
 @media (min-width: 768px) {
   .black {
+    padding: 70px 0 120px 0;
+
     &__descr {
       width: auto;
     }
@@ -64,6 +66,7 @@
     &__icon {
       width: 150px;
       height: 150px;
+      bottom: -195px;
     }
   }
 }
@@ -76,7 +79,7 @@
     }
   }
 }
-@media (min-width: 1920px) {
+@media (min-width: 1620px) {
   .black {
     &__txt {
       width: 330px;
@@ -117,7 +120,7 @@
     }
   }
 }
-@media (min-width: 1920px) {
+@media (min-width: 1620px) {
   .eco {
     padding: 130px 0 150px 0;
   }
